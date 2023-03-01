@@ -1,12 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>vuedemo</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="signup.css" />
+    <title>notebook</title>
   </head>
+
   <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
+    <div id="head">
+      <div id="nav_first">
+        <span id="file" class="nav">File</span>
+        <span id="edit" class="nav">Edit</span>
+        <span id="view" class="nav">View</span>
+        <span id="run" class="nav">Run</span>
+        <span id="help" class="nav">Help</span>
+
+        <button
+          onclick="document.getElementById('id01').style.display='block'"
+          style="width: auto" id="signup"
+        >
+          Sign Up
+        </button>
+        <div id="user">
+          <div id="userphoto"><img src="" ></div>
+          <span id="username"></span>
+        </div>
+        <div id="id01" class="modal">
+          <span
+            onclick="document.getElementById('id01').style.display='none'"
+            class="close"
+            title="Close Modal"
+            >&times;</span
+          >
+          <form class="modal-content" action="/action_page.php">
+            <div class="container">
+              <h1>登录</h1>
+
+              <hr />
+              <label for="email"><b>Id</b></label>
+              <input
+                type="text"
+                placeholder="请输入你的账号"
+                id="iid"
+                required
+              />
+
+              <label for="psw"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="请输入你的密码"
+                id="psw"
+                required
+              />
+
+              <label>
+                <input
+                  type="checkbox"
+                  checked="checked"
+                  name="remember"
+                  style="margin-bottom: 15px"
+                />
+                Remember me
+              </label>
+
+              <p>
+                如果你还没有账号，请点击
+                <a href="logon.html" style="color: dodgerblue">注册</a>.
+              </p>
+
+              <div class="clearfix">
+                <button
+                  type="button"
+                  onclick="document.getElementById('id01').style.display='none'"
+                  class="cancelbtn"
+                >
+                  退出
+                </button>
+                <button type="button" class="signupbtn" onclick="signon()">登录</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="nav_second">
+        <span id="open">&#9776; </span>
+      </div>
+    </div>
+    <div id="main">
+      <div id="left">
+        <div class="sidenav">
+          <a href="#">test1</a>
+          <a href="#">test2</a>
+          <a href="#">test3</a>
+          <a href="#">test4</a>
+        </div>
+      </div>
+
+      <div id="content">
+        <div class="cell_list">
+          <div class="cell" contenteditable="true">1</div>
+          <div class="cell_function">
+            <span class="upon">&#8593;</span>
+            <span class="downon">&#8595;</span>
+            <span class="del">&times;</span>
+            <span class="upadd">&#8657;</span>
+            <span class="downadd">&#8659;</span>
+          </div>
+        </div>
+
+        <div class="cell_list">
+          <div class="cell" contenteditable="true">2</div>
+          <div class="cell_function">
+            <span class="upon">&#8593;</span>
+            <span class="downon">&#8595;</span>
+            <span class="del">&times;</span>
+            <span class="upadd">&#8657;</span>
+            <span class="downadd">&#8659;</span>
+          </div>
+        </div>
+
+        <div class="cell_list">
+          <div class="cell" contenteditable="true">3</div>
+          <div class="cell_function">
+            <span class="upon">&#8593;</span>
+            <span class="downon">&#8595;</span>
+            <span class="del">&times;</span>
+            <span class="upadd">&#8657;</span>
+            <span class="downadd">&#8659;</span>
+          </div>
+        </div>
+
+        <div class="cell_list">
+          <div class="cell" contenteditable="true">4</div>
+          <div class="cell_function">
+            <span class="upon">&#8593;</span>
+            <span class="downon">&#8595;</span>
+            <span class="del">&times;</span>
+            <span class="upadd">&#8657;</span>
+            <span class="downadd">&#8659;</span>
+          </div>
+        </div>
+      </div>
+      <div id="right">
+        <span>作者：</span>
+        <span>创建日期：</span>
+        <span>更新日期：</span>
+        <span>cell属性：</span>
+        <span>按Ctrl切换模式</span>
+      </div>
+    </div>
+    <div id="footer"></div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/marked/4.1.0/marked.min.js"></script>
+    <script src="main.js"></script>
+    <script src="signup.js"></script>
   </body>
 </html>
